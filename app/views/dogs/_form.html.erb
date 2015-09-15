@@ -1,0 +1,28 @@
+<p>Name:</p>
+<input type="text" name="dog[name]" value="<%= @dog.name %>">
+
+<p>Sex:</p>
+<% Dog::SEXES.each do |sex| %>
+  <input type="radio" name="dog[sex]" id="dog_sex_<%= sex %>" value="<%= sex %>" <%= "checked" if @dog.sex == sex %> >
+  <label for="dog_sex_<%= sex %>"><%= sex %></label>
+<% end %>
+<br><br>
+
+<label for="dog_color">Color</label>
+<br>
+
+<select name="dog[color]" id="dog_color">
+  <% Dog::COLORS.each do |color| %>
+    <option value="<%= color %>" <%= "selected" if @dog.color == color %>> <%= color.capitalize %></option>
+  <% end %>
+</select>
+
+<br>
+<p>Birth Date</p>
+<input type="date" name="dog[birth_date]" id="dog_birthdate" value="<%= @dog.birth_date %>">
+<br><br>
+<label for="dog_description">Description</label>
+<br><br>
+<textarea name="dog[description]" id="dog_description"><%= @dog.description %></textarea>
+<br>
+<input type="submit" value="Submit">

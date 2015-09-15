@@ -1,0 +1,4 @@
+<% @dogs.each do |dog| %>
+  <%= link_to "See #{dog.name}'s page", dog_url(dog) %>
+  <br/>
+<% end %>
