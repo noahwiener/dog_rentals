@@ -1,3 +1,12 @@
+<% new_dog = !@dog.persisted? %>
+  <% unless new_dog %>
+    <form action="<%= dog_url %>" method="post">
+    <input "type='hidden' name='_method' value='patch'">
+  <% else %>
+    <form action="<%= dogs_url %>" method="post">
+  <% end %>
+  <h1><%= new_dog ? "Create a New Dog!" : "Edit your dog!" %></h1>
+
 <p>Name:</p>
 <input type="text" name="dog[name]" value="<%= @dog.name %>">
 
@@ -26,3 +35,4 @@
 <textarea name="dog[description]" id="dog_description"><%= @dog.description %></textarea>
 <br>
 <input type="submit" value="Submit">
+</form>

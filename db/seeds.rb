@@ -12,3 +12,5 @@ dog1 = Dog.create!(name: "Mack", birth_date: Date.new(2011,2,3),
 
 dog2 = Dog.create!(name: "Rumo", birth_date: Date.new(2014, 4, 4),
   color: 'black', sex: 'm', description: "has gigantic ears")
+
+  DogRentalRequest.create!(dog_id: 1, start_date: "2014-01-01", end_date: "2014-01-31", status: 'APPROVED')

@@ -15,6 +15,8 @@
 class Dog < ActiveRecord::Base
   validates :name, :birth_date, :sex, :color, :description, presence: true
 
+  has_many :dog_rental_requests
+
   COLORS = %w(black white brown gray red)
   SEXES = %w(M F)
 
